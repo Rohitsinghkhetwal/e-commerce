@@ -17,7 +17,7 @@ const ProductDetail = () => {
       
     };
     data();
-  }, []);
+  }, [id]);
   // console.log("These are products",product);
 
   return (
