@@ -10,7 +10,7 @@ const Navabar = () => {
   return (
     <>
     
-    <nav className='bg-gray-300 text-inherit flex flex-row justify-between px-9 font-serif text-xl'>
+    <nav className='bg-gray-300 text-inherit flex items-center flex-row justify-between px-9 font-serif text-xl h-[50px]'>
       <h2 className='text-inherit px-11 text-xl  '>Innocenti</h2>
         
         <ul className='flex px-11 '>
