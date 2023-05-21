@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useStore} from './Store';
+import toast from "react-hot-toast"
 
 const ProductDetail = () => {
   const [product, setProduct] = useState([]);
@@ -33,7 +34,11 @@ const ProductDetail = () => {
         <div className="text-xl m-5">
           <p>{product.description}</p>
         </div>
-        <button className="font-serif rounded-md bg-lime-200 font-bold hover:bg-lime-400 m-5 p-5" onClick={()=>AddToCartItems(product)}>Add to Cart</button>
+        <button className="font-serif rounded-md bg-lime-200 font-bold hover:bg-lime-400 m-5 p-5" onClick={()=> {
+          AddToCartItems(product);
+          toast.success("Item added to cart successfully")
+
+        }}>Add to Cart</button>
       </div>
     </div>
   );

@@ -2,12 +2,16 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useStore} from './Store';
 import axios from "axios";
+import  toast from "react-hot-toast";
+
 
 const Home = () => {
   const [data, setData] = useState([]);
   const { AddToCartItems } = useStore();
   
   const Navigate = useNavigate();
+
+  
 
   const usersPageHandler = (item) => {
     Navigate(`/products/${item}`);
@@ -41,7 +45,12 @@ const Home = () => {
               </div>
             </div>
 
-            <button className="font-serif rounded-md bg-lime-200 px-2 py-2 font-bold mx-32 my-6 hover:bg-lime-400" onClick={() => AddToCartItems(user)}>
+            <button className="font-serif rounded-md bg-lime-200 px-2 py-2 font-bold mx-32 my-6 hover:bg-lime-400" onClick={() =>
+              {
+                AddToCartItems(user)
+                toast.success("Added to cart successfully")
+
+              } }>
               Add to Cart 
             </button>
           </div>

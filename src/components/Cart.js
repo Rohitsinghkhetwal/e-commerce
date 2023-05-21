@@ -1,6 +1,7 @@
 import React from "react";
 import { useStore } from "./Store";
 import clsx from "clsx";
+import toast from "react-hot-toast";
 
 const Cart = () => {
   const { cart, RemoveFromCartItem } = useStore();
@@ -38,7 +39,10 @@ const Cart = () => {
                 <div className="flex justify-end pt-5">
                   <button
                     className="font-serif rounded-md bg-lime-200  font-bold hover:bg-lime-400 w-20 justify-end "
-                    onClick={() => RemoveFromCartItem(products._id)}
+                    onClick={() =>{ 
+                      RemoveFromCartItem(products._id);
+                      toast.error("item Removed")
+                    }}
                   >
                     Remove
                   </button>

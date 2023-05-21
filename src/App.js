@@ -1,5 +1,7 @@
 import Detail from "./components/Detail";
 import Navabar from "./components/Navabar";
+import  { Toaster } from 'react-hot-toast';
+
 
 
 function App() {
@@ -7,6 +9,8 @@ function App() {
     <div className="App">
       <Navabar/>
       <Detail/>
+      <Toaster/>
+     
       
      
      
